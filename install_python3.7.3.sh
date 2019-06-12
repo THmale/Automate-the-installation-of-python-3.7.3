@@ -56,8 +56,11 @@ cd Python-3.7.3
 make && make install
 fi
 
+rm /usr/bin/python3 -rf
 
 ln -s /usr/local/python3.7/bin/python3.7 /usr/bin/python3
+
+rm /usr/bin/pip3   -rf 
 
 ln -s /usr/local/python3.7/bin/pip3.7 /usr/bin/pip3
 
