@@ -1,5 +1,4 @@
-# !/bin/sh
-#Install dependencies
+nstall dependencies
 cd /usr/local/sbin
 #Install development tool
 apt-get update
@@ -39,28 +38,32 @@ fi
 
 cd /usr/local/sbin
 
-#install python3.7.3
+
+v="3.7.3"
+
+
+#install python.x
 #exist
-if [ -f "Python-3.7.3.tgz" ];then
-tar -xzvf Python-3.7.3.tgz 
-cd Python-3.7.3
-./configure --prefix=/usr/local/python3.7 --with-openssl=/usr/local/openssl
+if [ -f "Python-$v.tgz" ];then
+tar -xzvf Python-$v.tgz 
+cd Python-$v
+./configure --prefix=/usr/local/python-$v --with-openssl=/usr/local/openssl
 make && make install
 
 #file is not exist
 else
-wget https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
-tar -xzvf Python-3.7.3.tgz 
-cd Python-3.7.3
-./configure --prefix=/usr/local/python3.7 --with-openssl=/usr/local/openssl
+wget https://www.python.org/ftp/python/$v/Python-$v.tgz
+tar -xzvf Python-$v.tgz 
+cd Python-$v
+./configure --prefix=/usr/local/python-$v --with-openssl=/usr/local/openssl
 make && make install
 fi
 
 rm /usr/bin/python3 -rf
 
-ln -s /usr/local/python3.7/bin/python3.7 /usr/bin/python3
+ln -s /usr/local/python-$v/bin/python${v:0:3}  /usr/bin/python3
 
 rm /usr/bin/pip3   -rf 
 
-ln -s /usr/local/python3.7/bin/pip3.7 /usr/bin/pip3
+ln -s /usr/local/python-$v/bin/pip${v:0:3} /usr/bin/pip3
 
