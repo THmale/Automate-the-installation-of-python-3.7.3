@@ -1,4 +1,6 @@
 # Automate-the-installation-of-python-x
+在Debian9上，debian9_python3-x.sh 可以完美安装python3和pip3
+在Debian8上，install_python-x.sh、install_python3.7.3.sh 可以完美安装python3和pip3
 自动化安装python3的各个版本（如：python3.5.6 、python3.6.8 、python3.7.3）
 用脚本配置变量环境，默认安装python3.7.3；
 可以手动修改脚本使安装python3.7.2、python3.7.1等；
